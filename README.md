@@ -21,3 +21,4 @@ options:
   -c CIPHER, --cipher CIPHER
                         ssl/tls - uzyj STARTTLS/SSL w trakcie sesji SMTP (default: None)
   -a AUTH, --auth AUTH  plain/login - uzyj AUTH PLAIN/AUTH LOGIN w trakcie sesji SMTP, (domyslnie plain) (default: None)
+  
