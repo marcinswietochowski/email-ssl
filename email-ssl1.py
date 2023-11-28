@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Email - SSL - Version 1.0
 
 import base64
 import socket
@@ -23,18 +24,18 @@ def get_mx_record(domain):
     else:
         return None 
 
-parser = argparse.ArgumentParser(description="Just an example", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser = argparse.ArgumentParser(description="EMAIL SSL Send - usage", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 parser.add_argument("mail_from", help="nadawca")
 parser.add_argument("rcpt_to", help="odbiorca")
 parser.add_argument("mx", help="Mail eXchanger")
 parser.add_argument("-p", "--port", help="port", type=int, default=25)
 parser.add_argument("-e", "--helo", action="store", help="helo")
-parser.add_argument("-u", "--user", action="store", help="login do autoryzacji")
-parser.add_argument("-s", "--secure", action="store", help="haslo do autoryzacji")
-parser.add_argument("-b", "--body", action="store", help="plik z trescia maila")
-parser.add_argument("-c", "--cipher", action="store", help="ssl/tls - uzyj STARTTLS/SSL w trakcie sesji SMTP")
-parser.add_argument("-a", "--auth", action="store", help="plain/login - uzyj AUTH PLAIN/AUTH LOGIN w trakcie sesji SMTP, (domyslnie plain)")
+parser.add_argument("-u", "--user", action="store", help="login for authorization")
+parser.add_argument("-s", "--secure", action="store", help="password")
+parser.add_argument("-b", "--body", action="store", help="file with an email")
+parser.add_argument("-c", "--cipher", action="store", help="ssl/tls - use STARTTLS or SSL in SMTP session")
+parser.add_argument("-a", "--auth", action="store", help="plain/login - use AUTH PLAIN or AUTH LOGIN in SMTP session, (default - plain)")
 
 args = parser.parse_args()
 config = vars(args)
